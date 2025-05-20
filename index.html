@@ -1,0 +1,110 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Join the Plant for Tomorrow campaign and help reforest the planet with every donation." />
+  <title>Saplyn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Hero Section -->
+  <header class="hero-section relative">
+    <div class="leaf-container absolute inset-0 z-1 pointer-events-none"></div>
+    <img src="hero1.jpg" alt="Tree planting" class="w-full h-80 object-cover absolute inset-0 opacity-40 z-0">
+    <div class="relative z-10">
+      <h1 class="text-4xl font-bold">One Click, One Tree Planted</h1>
+      <p class="mt-2 text-lg">Join a growing movement to reforest the planet.</p>
+      <p class="text-sm mt-1 text-green-100 italic">Saplyn is a tree-planting platform that lets you grow forests with just one click.</p>
+      <button onclick="document.getElementById('donate').scrollIntoView({behavior: 'smooth'})" class="cta-button">Donate Now</button>
+    </div>
+  </header>
+
+  <!-- Features Section -->
+  <section id="features" class="features-section grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="feature-card hover-effect">
+      <img src="howitworks.jpg" alt="How it Works" class="rounded-lg mb-3 w-full h-40 object-cover hover-image">
+      <h2 class="font-bold text-xl mb-2">How it Works</h2>
+      <p>Donate → Tree Planted → Receive Impact Report</p>
+    </div>
+    <div class="feature-card hover-effect">
+      <img src="globalreach.jpg" alt="Global Reach" class="rounded-lg mb-3 w-full h-40 object-cover hover-image">
+      <h2 class="font-bold text-xl mb-2">Global Reach</h2>
+      <p>Our partners plant trees in Asia, Africa, and Latin America.</p>
+    </div>
+    <div class="feature-card hover-effect">
+      <img src="transparentfunding.jpg" alt="Transparent Funding" class="rounded-lg mb-3 w-full h-40 object-cover hover-image">
+      <h2 class="font-bold text-xl mb-2">Transparent Funding</h2>
+      <p>100% of your donation goes to our reforestation partners.</p>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testemonials" class="testimonials-section">
+    <h2 class="text-2xl font-bold text-center mb-6">What Our Donors Say</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card hover-effect">
+        <img src="user1.jpg" alt="Erika T." class="w-12 h-12 rounded-full mb-2 hover-scale">
+        <p>“Nag-donate lang ako ng ₱50, tapos may puno na akong naitayo? Biglang feeling ko responsible adult ako.”</p>
+        <span class="block mt-2 font-semibold">— Luzviminda Liwayway</span>
+      </div>
+      <div class="testimonial-card hover-effect">
+        <img src="user2.jpg" alt="Jon M." class="w-12 h-12 rounded-full mb-2 hover-scale">
+        <p>“"Real talk? I donated ₱20 just to try — now I’m lowkey obsessed. Planting trees = my new era. Pls lang, sana all may ambag sa earth.”</p>
+        <span class="block mt-2 font-semibold">— Gardo Makisig</span>
+      </div>
+      <div class="testimonial-card hover-effect">
+        <img src="user3.jpg" alt="Ana R." class="w-12 h-12 rounded-full mb-2 hover-scale">
+        <p>“My mom said to stop buying Robux and donate instead. So I did... and now I planted a TREE. Bro I feel like a nature boss. ”</p>
+        <span class="block mt-2 font-semibold">— Binibining Marilag</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Donation Form Section -->
+  <section id="donate" class="donation-form-section">
+  <div class="form-container">
+    <h2 class="text-2xl font-bold mb-4">Donate and Plant Trees</h2>
+    <form action="submit.php" method="POST" class="form-grid">
+      <input type="text" name="name" placeholder="Your Name" required class="form-input" />
+      <input type="email" name="email" placeholder="Email Address" required class="form-input" />
+      <input type="number" name="amount" placeholder="Donation Amount (₱)" required class="form-input" />
+      <textarea name="message" placeholder="Optional Message" class="form-input"></textarea>
+      <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full shadow-md transition duration-300">
+  Submit Donation
+  </button>
+    </form>
+  </div>
+  </section>
+
+ <section class="bg-white py-10 text-center">
+  <h2 class="text-2xl font-bold mb-4">2025 Tree Goal: 10,000 Trees</h2>
+  <p class="mb-3 text-gray-700">
+    So far, <span id="tree-count" class="font-bold text-green-700">0</span> trees have been planted!
+  </p>
+
+  <div class="w-11/12 md:w-2/3 mx-auto bg-gray-200 rounded-full h-6 overflow-hidden shadow-inner">
+    <div id="progress-bar" class="h-full bg-green-600 text-white text-xs font-bold flex items-center justify-center transition-all duration-700 ease-in-out" style="width: 0%">
+      <span id="progress-percent"></span>
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="footer-section">
+    <nav>
+      <a href="#features" class="mx-2 underline">About</a>
+      <a href="#testemonials" class="mx-2 underline">Testemonials</a>
+      <a href="#donate" class="mx-2 underline">Donate</a>
+    </nav>
+    <p class="mt-2 text-sm">© Saplyn | <a href="#" class="underline">Privacy Policy</a> | <a href="#" class="underline">Terms of Use</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
